@@ -30,6 +30,8 @@ rfm_bubbles = (
     .reset_index(name="num_customers")
 )
 
+rfm_bubbles["rfm_code"] = rfm_bubbles["rfm_code"].astype(str)
+
 fig = px.scatter_3d(
     rfm_bubbles,
     x="recency_score",
